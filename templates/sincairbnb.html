@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+<div class="airbnb">
+    <form action="" method="POST">
+        <div class="col-md-14">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <table class="table">
+            <tr>
+                <td>Usuario Airbnb:</td>
+                <td><input type="text" name="usuario" aria-describedby="user" placeholder="Usuario" id="usuario" value="{{ email }}" required></td>
+                <small id="user" class="form-text text-muted">Nunca compartiremos tus datos con nadie más</small>
+            </tr>
+            <tr>
+                <td>Contraseña Airbnb:</td>
+                <td><input type="password" aria-describedby="p" name="password" placeholder="Contraseña" id="password" value="{{ password }}" required></td>
+                <small class="form-text text-muted" id="p">Ciframos todas las contraseñas. Tu seguridad, nuestra prioridad.</small>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" class="btn btn-primary" value="Procesar Datos" />
+                </td>
+            </tr>
+        </table>
+        {{ msg }}
+    </form>
+
+
+</div>
+</main>
+
+{% endblock content %}

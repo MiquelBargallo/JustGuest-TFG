@@ -1,0 +1,89 @@
+{% extends "admin_layout.html" %}
+{% block content %}
+
+<main>
+<div class="anyadir">
+    <center>
+    <form action="" method="POST">
+        <div class="col-md-14">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <br>
+        <table class="table">
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" name="nombre" placeholder="Nombre" required></td>
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td><input type="text" name="direccion" placeholder="Dirección" required></td>
+            </tr>
+            <tr>
+                <td>Número Camas Matrimonio</td>
+                <td><input type="text" name="n_camas_matrimonio" placeholder="Camas Matrimonio" required></td>
+            </tr>
+            <tr>
+                <td>Número Camas Individuales</td>
+                <td><input type="text" name="n_camas_individuales" placeholder="Camas Individuales" required></td>
+            </tr>
+            <tr>
+                <td>Número Baños</td>
+                <td><input type="text" name="n_banyos" placeholder="Baños" required></td>
+            </tr>
+            <tr>
+                <td>Capacidad Guests</td>
+                <td><input type="text" name="capacidad_guests" placeholder="Máx. Guests" required></td>
+            </tr>
+            <tr>
+                <td>IdUsuario</td>
+                <td><input type="text" name="idusuario" placeholder="IdUsuario" required></td>
+            </tr>
+            <tr>
+                <td>IdAirbnb</td>
+                <td><input type="text" name="idairbnb" placeholder="IdAirbnb" required></td>
+            </tr>
+            <tr>
+                <td>IdBooking</td>
+                <td><input type="text" name="idbooking" placeholder="IdBooking" required></td>
+            </tr>
+            <tr>
+                <td>CheckIn Time</td>
+                <td><input type="text" name="checkin_time" placeholder="hh::mm" required></td>
+            </tr>
+            <tr>
+                <td>CheckOut Time</td>
+                <td><input type="text" name="checkout_time" placeholder="hh::mm" required></td>
+            </tr>
+            <tr>
+                <td>Número Baules</td>
+                <td><input type="text" name="n_baules" placeholder="Número Baules" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <input type="submit" class="btn btn-primary" value="Procesar Datos" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    </center>
+
+
+
+
+
+
+
+
+
+
+</div>
+</main>
+
+
+{% endblock content %}

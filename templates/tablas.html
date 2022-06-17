@@ -1,0 +1,72 @@
+{% extends "admin_layout.html" %}
+{% block content %}
+<main>
+ <div class="card mb-4">
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tablas de BD</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Dirección</th>
+                                                <th scope="col"># Camas Matrimonio</th>
+                                                <th scope="col"># Camas Individuales</th>
+                                                <th scope="col"># Baños</th>
+                                                <th scope="col">Número Máximo Guests</th>
+                                                <th scope="col">IdUsuario</th>
+                                                <th scope="col">IdAirbnb</th>
+                                                <th scope="col">IdBooking</th>
+                                                <th scope="col">CheckIn Time</th>
+                                                <th scope="col">CheckOut Time</th>
+                                                <th scope="col"># Baules</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Dirección</th>
+                                                <th scope="col"># Camas Matrimonio</th>
+                                                <th scope="col"># Camas Individuales</th>
+                                                <th scope="col"># Baños</th>
+                                                <th scope="col">Número Máximo Guests</th>
+                                                <th scope="col">IdUsuario</th>
+                                                <th scope="col">IdAirbnb</th>
+                                                <th scope="col">IdBooking</th>
+                                                <th scope="col">CheckIn Time</th>
+                                                <th scope="col">CheckOut Time</th>
+                                                <th scope="col"># Baules</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+
+                                            {% for propiedad in propiedades %}
+                                            <tr>
+                                                <th scope="row">{{ propiedad["idpropiedad"] }}</th>
+                                                <td>{{ propiedad["nombre"] }}</td>
+                                                <td>{{ propiedad["direccion"] }}</td>
+                                                <td>{{ propiedad["n_camas_matrimonio"] }}</td>
+                                                <td>{{ propiedad["n_camas_individuales"] }}</td>
+                                                <td>{{ propiedad["n_banyos"] }}</td>
+                                                <td>{{ propiedad["capacidad_guests"] }}</td>
+                                                <td>{{ propiedad["idusuario"] }}</td>
+                                                <td>{{ propiedad["idairbnb"] }}</td>
+                                                <td>{{ propiedad["idbooking"] }}</td>
+                                                <td>{{ propiedad["checkin_time"] }}</td>
+                                                <td>{{ propiedad["checkout_time"] }}</td>
+                                                <td>{{ propiedad["n_baules"] }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</main>
+
+
+{% endblock content %}

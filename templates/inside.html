@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<title></title>
+
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link href="static/css/estilosinside.css" rel="stylesheet" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+
+<!-- MultiStep Form -->
+<body>
+<center>
+<a href="{{ url_for('logout') }}"><button class="btn btn-secondary">Logout</button></a>
+<div class="row justify-content-center align-items-center">
+		<div class="col-md-6 col-md-offset-3">
+			<form id="msform" action="" method="POST">
+				<!-- progressbar -->
+				<ul id="progressbar">
+					<li class="active">Integra Airbnb</li>
+					<li>Integra Booking</li>
+					<li>Finaliza</li>
+				</ul>
+				<!-- fieldsets -->
+				        <div class="col-md-14">
+							{% with messages = get_flashed_messages(with_categories=true) %}
+							  {% if messages %}
+								{% for category, message in messages %}
+								  <div class="alert alert-{{ category }}">{{ message }}</div>
+								{% endfor %}
+								{% endif %}
+							{% endwith %}
+						</div>
+				<fieldset>
+					<h2 class="fs-title">Datos Airbnb</h2>
+					<h3 class="fs-subtitle">La seguridad de tus datos,¡nuestra prioridad! #JustGuest</h3>
+					<input type="text" id="usuario" name="usuario" value="{{ email }}" placeholder="Email"/>
+					<input type="password" id="password" name="password" value="{{ password }}" placeholder="Password"/>
+					<input type="button" name="next" class="next action-button" value="Siguiente"/>
+				</fieldset>
+				<fieldset>
+					<h2 class="fs-title">Pasos Booking</h2>
+					<h3 class="fs-subtitle">Sigue estos pasos tan sencillos para que sincronicemos tus reservas en Booking.com</h3>
+					<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+					<input type="button" name="next" class="next action-button" value="Siguiente"/>
+				</fieldset>
+				<fieldset>
+					<h2 class="fs-title">Gracias! Dale click a Finalizar y nos ocupamos del resto :)</h2>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+					  <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+					  <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+					</svg>
+					<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+					<input type="submit" class="submit action-button" value="Finalizar"/>
+				</fieldset>
+			</form>
+			<!-- link to designify.me code snippets -->
+			<div class="dme_link">
+				<p><a href="#">Ciframos todos los datos. Tu seguridad, ¡nuestra prioridad!</a></p>
+			</div>
+			<!-- /.link to designify.me code snippets -->
+		</div>
+	</div>
+	<!-- /.MultiStep Form -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" crossorigin="anonymous"></script>
+
+<script src="static/js/script_inside.js"></script>
+</center>
+</body>
+</html>

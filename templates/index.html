@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+{% block content %}
+        <main>
+
+            <section class="presentation">
+                <div class="introduction">
+                    <div class="intro-text">
+                        <h1>Somos tu solución</h1>
+                        <p>Olvídate de los problemas de lavandería en tus pisos turísticos</p>
+                    </div>
+                    <div class="cta">
+                        <button class="cta-select">Infórmame</button>
+                        <a href="{{ url_for('register') }}"><button class="cta-add">Dame de alta</button></a>
+                    </div>
+                </div>
+                <div class="cover">
+                    <video src="static/img/video.mp4" type="video/mp4" controls />
+                </div>
+            </section>
+
+
+            <img class="big-circle" src="static/img/big-eclipse.svg" alt="" />
+            <img class="medium-circle" src="static/img/mid-eclipse.svg" alt="" />
+            <img class="small-circle" src="static/img/small-eclipse.svg" alt="" />
+
+        </main>
+
+
+        
+
+
+
+
+{% endblock content %}
